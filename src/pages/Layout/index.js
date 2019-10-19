@@ -1,4 +1,5 @@
 import React from "react";
+import { Route } from "react-router-dom";
 import clsx from "clsx";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
@@ -20,9 +21,11 @@ import { mainListItems, secondaryListItems } from "./listItems";
 // import Deposits from "./Deposits";
 // import Orders from "./Orders";
 
+import AccountList from "../account/AccountList";
+
 import styles from "./styles";
 
-export default function Dashboard() {
+export default function Layout() {
   const classes = styles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -90,6 +93,8 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
+            <Route exact path="/app/accounts" component={AccountList} />
+
             {/* Chart 
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>

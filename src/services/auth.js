@@ -10,9 +10,6 @@ export const isAuthenticated = () => {
 
   const now = new Date().getTime() / 1000;
 
-  console.log("Token", token);
-  console.log("now", now);
-
   return token !== null && token.exp >= now;
 };
 
